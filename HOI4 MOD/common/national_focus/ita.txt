@@ -1,0 +1,301 @@
+focus_tree = {
+	id = ita
+	continuous_focus_position = { x = 0 y = 1000 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ITA
+		}
+	}
+	#Armament Effort
+	focus = {
+		id = ITA_armament_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 21
+		y = 3
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ITA_military_industrial_complex  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			 limit = {
+			 free_building_slots = {
+			 building = arms_factory
+			 size > 0
+			 include_locked = yes
+			 }
+			 }
+			 add_extra_state_shared_building_slots = 1
+			 add_building_construction = {
+			 type = arms_factory
+			 level = 1
+			 instant_build = yes
+			 }
+			 set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			 }
+			
+		}
+	}
+
+	#Kickstart Research
+	focus = {
+		id = ITA_kickstart_research
+		icon = GFX_focus_research
+		x = 3
+		y = 1
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		completion_reward = {
+			add_research_slot = 1
+			
+		}
+	}
+
+	#Infantry and Heavy Navy
+	focus = {
+		id = ITA_infantry_and_heavy_navy
+		icon = GFX_focus_generic_navy_battleship2
+		x = 5
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = ITA_kickstart_research  }
+		completion_reward = {
+			navy_experience = 10
+			
+		}
+	}
+
+	#Expansion of the Economy
+	focus = {
+		id = ITA_expansion_of_the_economy
+		icon = GFX_focus_befriend_italy
+		x = 16
+		y = 1
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+
+	#Military Industrial Complex
+	focus = {
+		id = ITA_military_industrial_complex
+		icon = GFX_focus_generic_combined_arms
+		x = 21
+		y = 2
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ITA_expansion_of_the_economy  }
+		completion_reward = {
+			add_tech_bonus = {
+			 bonus = 1 
+			uses = 2 
+			category = industry 
+			}
+			
+		}
+	}
+
+	#Research Greater Production Methods
+	focus = {
+		id = ITA_research_greater_production_methods
+		icon = GFX_goal_continuous_research
+		x = 23
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = ITA_armament_effort_ii  }
+		completion_reward = {
+			add_tech_bonus = {
+			 bonus = 1 
+			uses = 2 
+			category = industry 
+			}
+			
+		}
+	}
+
+	#Armament Effort II
+	focus = {
+		id = ITA_armament_effort_ii
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 21
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = ITA_armament_effort  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			 limit = {
+			 free_building_slots = {
+			 building = arms_factory
+			 size > 0
+			 include_locked = yes
+			 }
+			 }
+			 add_extra_state_shared_building_slots = 2
+			 add_building_construction = {
+			 type = arms_factory
+			 level = 2
+			 instant_build = yes
+			 }
+			 set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			 }
+			
+		}
+	}
+
+	#Armament Effort III
+	focus = {
+		id = ITA_armament_effort_iii
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 21
+		y = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ITA_armament_effort_ii  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			 limit = {
+			 free_building_slots = {
+			 building = arms_factory
+			 size > 0
+			 include_locked = yes
+			 }
+			 }
+			 add_extra_state_shared_building_slots = 3
+			 add_building_construction = {
+			 type = arms_factory
+			 level = 3
+			 instant_build = yes
+			 }
+			 set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			 }
+			
+		}
+	}
+
+	#Mil REsearch 1
+	focus = {
+		id = ITA_mil_research_1
+		icon = GFX_ITA_mil_research_1-166
+		x = 23
+		y = 7
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = ITA_research_greater_production_methods  }
+	}
+
+	#Armament Effort IV
+	focus = {
+		id = ITA_armament_effort_iv
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 21
+		y = 6
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ITA_armament_effort_iii  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			 limit = {
+			 free_building_slots = {
+			 building = arms_factory
+			 size > 0
+			 include_locked = yes
+			 }
+			 }
+			 add_extra_state_shared_building_slots = 10
+			 add_building_construction = {
+			 type = arms_factory
+			 level = 5
+			 instant_build = yes
+			 }
+			 set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			 }
+			
+		}
+	}
+
+	#Rejuvenate The Workforce
+	focus = {
+		id = ITA_rejuvenate_the_workforce
+		icon = GFX_ITA_rejuvenate_the_workforce-61
+		x = 22
+		y = 8
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ITA_mil_research_1  focus = ITA_armament_effort_iv  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			 limit = {
+			 free_building_slots = {
+			 building = arms_factory
+			 size > 0
+			 include_locked = yes
+			 }
+			 }
+			 add_extra_state_shared_building_slots = 6
+			 add_building_construction = {
+			 type = arms_factory
+			 level = 5
+			 instant_build = yes
+			 }
+			 set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			 }
+			
+		}
+	}
+
+	#Create Jobs For The Poor
+	focus = {
+		id = ITA_create_jobs_for_the_poor
+		icon = GFX_ITA_create_jobs_for_the_poor-382
+		x = 16
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = ITA_expansion_of_the_economy  }
+		completion_reward = {
+			random_owned_controlled_state ={
+			 limit = {
+			 free_building_slots = {
+			 building = industrial_complex
+			 size > 0
+			 include_locked = yes
+			 }
+			 }
+			 add_extra_state_shared_building_slots = 3
+			 add_building_construction = {
+			 type = industrial_complex
+			 level = 1
+			 instant_build = yes
+			 }
+			 set_state_flag = REPLACE_ME_WITH_UNIQUE_IDENTIFIER
+			 }
+			
+		}
+	}
+
+}
